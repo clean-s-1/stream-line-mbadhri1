@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 function generateTemperatureSensorValue() {
   return randomNumberGenerator(1, 120, 50);
 }
@@ -12,9 +14,17 @@ function generateChargeSensorValue() {
   return randomNumberGenerator(1, 40, 50);
 }
 
+
+saveValueInConsole(generateChargeSensorValue().join(' ').trim(), './chargeSensor.txt');
+saveValueInConsole(generateTemperatureSensorValue().join(' ').trim(), './tempSensor.txt');
+
+function saveValueInConsole(value, fileName) {
+  fs.writeFileSync(fileName, value);
+}
 module.exports = {
   generateTemperatureSensorValue,
   randomNumberGenerator,
   generateChargeSensorValue,
 };
-// console.log(randomNumberGenerator(1, 200, 6));
+
+
