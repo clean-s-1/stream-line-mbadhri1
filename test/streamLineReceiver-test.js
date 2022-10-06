@@ -17,8 +17,7 @@ describe('should test stream line sender readings ', () => {
   it('should return max value correctly', () => {
     expect(max).to.equal(197);
   });
-  it('should generate 50 tempearture readings', () => {
-    console.log(average);
+  it('should generate average readings correctly', () => {
     expect(average).to.equal(32.2);
   });
 });
